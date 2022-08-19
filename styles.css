@@ -2,14 +2,25 @@ body{
 display: flex;
 justify-content: center;
 align-items: center;
-flex-wrap: wrap;
+
 }
 
 .container{
     display: flex;
+    flex-direction: column;
+    min-width: 500px;
 }
 
+.gridRow{
+    display: flex;
+    flex: 1;
+}
 
 .grid{
-border: red solid;
+border: black solid;
+border-width: 1px;
+min-width: 10px;
+min-height: 10px;
+
+
 }
