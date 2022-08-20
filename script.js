@@ -1,6 +1,9 @@
 let container=document.querySelector(".container");
 let sizebutton=document.querySelector(".size-button");
 
+let minGrid=50;
+let maxGrid=100;
+
 function randomColor(){
     let letters = '0123456789ABCDEF';
     let color = '#';
@@ -10,9 +13,9 @@ function randomColor(){
   return color;
 }
 
-function createGrids(len=16){   
-    len = len>50? 50:len;
-    len = len<10? 10:len; 
+function createGrids(len=minGrid){   
+    len = len>maxGrid? maxGrid:len;
+    len = len<minGrid? minGrid:len; 
      
     for(let row=0;row<len;row++){
         let gridRow = document.createElement("div");
@@ -32,10 +35,10 @@ function createGrids(len=16){
 createGrids();
 
 function getsize(){
-    let s =window.prompt("Enter grid size (min 10, max 50)")
+    let s =window.prompt(`Enter grid size (min ${minGrid}, max ${maxGrid})`)
     if(!Number(s)){
         window.alert("Enter a valid number");
-        s =window.prompt("Enter grid size (min 10, max 50)")
+        s =window.prompt(`Enter grid size (min 50, max 100)`)
     }  
     if(s){
         container.innerHTML="";
