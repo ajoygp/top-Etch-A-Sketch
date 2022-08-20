@@ -38,7 +38,7 @@ function getsize(){
     let s =window.prompt(`Enter grid size (min ${minGrid}, max ${maxGrid})`)
     if(!Number(s)){
         window.alert("Enter a valid number");
-        s =window.prompt(`Enter grid size (min 50, max 100)`)
+        s =window.prompt(`Enter grid size (min ${minGrid}, max ${maxGrid})`)
     }  
     if(s){
         container.innerHTML="";
