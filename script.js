@@ -1,7 +1,7 @@
 let container=document.querySelector(".container");
 let sizebutton=document.querySelector(".size-button");
 
-let minGrid=50;
+let minGrid=1;
 let maxGrid=100;
 
 function randomColor(){
@@ -13,7 +13,7 @@ function randomColor(){
   return color;
 }
 
-function createGrids(len=minGrid){   
+function createGrids(len=10){   
     len = len>maxGrid? maxGrid:len;
     len = len<minGrid? minGrid:len; 
      
