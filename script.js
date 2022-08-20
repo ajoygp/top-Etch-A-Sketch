@@ -1,8 +1,11 @@
 let container=document.querySelector(".container");
 let sizebutton=document.querySelector(".size-button");
+let resetbutton=document.querySelector(".reset-button");
+
 
 let minGrid=1;
 let maxGrid=100;
+let newGridSize=10;
 
 function randomColor(){
     let letters = '0123456789ABCDEF';
@@ -12,6 +15,12 @@ function randomColor(){
   }
   return color;
 }
+
+resetbutton.addEventListener("click",()=>{
+    container.innerHTML="";
+    createGrids(newGridSize);
+})
+
 
 function createGrids(len=10){   
     len = len>maxGrid? maxGrid:len;
@@ -35,14 +44,14 @@ function createGrids(len=10){
 createGrids();
 
 function getsize(){
-    let s =window.prompt(`Enter grid size (min ${minGrid}, max ${maxGrid})`)
-    if(!Number(s)){
+    newGridSize =window.prompt(`Enter grid size (min ${minGrid}, max ${maxGrid})`)
+    if(newGridSize && !Number(newGridSize)){
         window.alert("Enter a valid number");
-        s =window.prompt(`Enter grid size (min ${minGrid}, max ${maxGrid})`)
+        newGridSize =window.prompt(`Enter grid size (min ${minGrid}, max ${maxGrid})`)
     }  
-    if(s){
+    if(newGridSize){
         container.innerHTML="";
-        createGrids(s);
+        createGrids(newGridSize);
     }
 }
 sizebutton.addEventListener("click",getsize);
